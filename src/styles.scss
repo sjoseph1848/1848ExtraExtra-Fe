@@ -1,7 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/scss/bootstrap.scss';
 $primary: #5D7B93;
+$primary-overlay: rgba(93,123,147,0.8);
 
 body {
   margin-top: 105px;
+}
+
+
+@media(max-width: 768px) {
+  #showcase {
+    min-height: 500px;
+
+    h1 {
+      font-size: 4rem;
+    }
+  }
 }
