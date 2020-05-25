@@ -5,6 +5,15 @@ $primary-overlay: rgba(93,123,147,0.8);
 
 body {
   margin-top: 105px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 
