@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsDataService} from '../data/news-data.service';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +13,18 @@ export class HomeComponent implements OnInit {
   // tslint:disable-next-line: max-line-length
   mainStoryLink = 'https://www.cnet.com/personal-finance/how-to-track-your-stimulus-check-now-with-the-irs-get-my-payment-app/';
 
-  constructor() { }
+  constructor(private newsDataService: NewsDataService) { }
 
   ngOnInit() {
+    let topStory = this.newsDataService.getNewsByCategory('general');
+    topStory.subscribe((data: any) => {
+      console.log(data.articles);
+      this.mainStoryTitle = data.articles[0].title;
+      this.mainStorySubTitle = data.articles[0].description;
+      this.mainStoryLink = data.articles[0].url;
+    });
+
+
   }
 
 }
