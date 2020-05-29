@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   // tslint:disable-next-line: max-line-length
   mainStoryLink = 'https://www.cnet.com/personal-finance/how-to-track-your-stimulus-check-now-with-the-irs-get-my-payment-app/';
 
+  otherNews = [];
   constructor(private newsDataService: NewsDataService) { }
 
   ngOnInit() {
@@ -22,7 +23,10 @@ export class HomeComponent implements OnInit {
       this.mainStoryTitle = data.articles[0].title;
       this.mainStorySubTitle = data.articles[0].description;
       this.mainStoryLink = data.articles[0].url;
+      this.otherNews = data.articles;
     });
+
+
 
   }
 
