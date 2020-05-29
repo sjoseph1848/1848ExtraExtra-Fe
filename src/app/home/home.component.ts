@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
       this.mainStoryLink = data.articles[0].url;
     });
 
-
   }
 
 }
