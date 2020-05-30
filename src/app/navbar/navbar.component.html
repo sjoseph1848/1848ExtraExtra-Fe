@@ -11,16 +11,24 @@
     <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }" id="navbarCollapse">
       <ul class="navbar-nav ml-auto" >
         <li class="nav-item">
-          <a [routerLink]="['/politics']" class="nav-link">Politics</a>
+          <a
+          [routerLink]="['/politics']"
+          class="nav-link">Politics</a>
         </li>
         <li class="nav-item">
-          <a href="#about" class="nav-link">Sports</a>
+          <a
+          [routerLink]="['/sports']"
+          class="nav-link">Sports</a>
         </li>
         <li class="nav-item">
-          <a href="#authors" class="nav-link">Science</a>
+          <a
+          [routerLink]="['/science']"
+          class="nav-link">Science</a>
         </li>
         <li class="nav-item">
-          <a href="#contact" class="nav-link">Economics</a>
+          <a
+          [routerLink]="['/economics']"
+          class="nav-link">Economics</a>
         </li>
       </ul>
     </div>

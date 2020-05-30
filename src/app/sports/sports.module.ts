@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SportsRoutingModule } from './sports-routing.module';
+import { SportsHomeComponent } from './sports-home/sports-home.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [SportsHomeComponent],
   imports: [
     CommonModule,
     SportsRoutingModule

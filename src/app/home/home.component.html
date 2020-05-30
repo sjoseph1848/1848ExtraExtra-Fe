@@ -1,6 +1,6 @@
 <app-showcase>
   <header>
-    {{ (mainStoryTitle.length > 50) ? (mainStoryTitle | slice:0:50)+'..':(mainStoryTitle) }}
+    {{ (mainStoryTitle.length > 50) ? (mainStoryTitle | slice:0:50)+'...':(mainStoryTitle) }}
   </header>
     <p class="lead">{{ mainStorySubTitle }}</p>
     <a [href]="mainStoryLink" target="_blank" class="btn btn-outline-secondary btn-lg text-white">
