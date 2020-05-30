@@ -1,9 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'bootstrap/scss/bootstrap.scss';
+
 $primary: #5D7B93;
 $primary-overlay: rgba(93,123,147,0.8);
 
+
+@import 'bootstrap/scss/bootstrap.scss';
+
 body {
+  min-height: 100vh;
   margin-top: 105px;
   padding-right: 30px;
   padding-left: 30px;
@@ -22,7 +26,7 @@ body {
     min-height: 500px;
 
     h1 {
-      font-size: 4rem;
+      font-size: 1vw;
     }
     .lead {
       display: none;
