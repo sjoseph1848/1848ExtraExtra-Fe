@@ -1,0 +1,10 @@
+<section id="showcard" class="py-5">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="story?.urlToImage" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ story?.title }}</h5>
+      <p class="card-text">{{ story?.description }}</p>
+      <a [href]="story?.url" target="_blank" class="btn btn-primary">Continue reading</a>
+    </div>
+  </div>
+</section>

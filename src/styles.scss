@@ -5,7 +5,9 @@ $primary-overlay: rgba(93,123,147,0.8);
 
 
 @import 'bootstrap/scss/bootstrap.scss';
-
+#showcard {
+  display: none;
+}
 body {
   min-height: 100vh;
   margin-top: 105px;
@@ -23,14 +25,11 @@ body {
 
 @media(max-width: 768px) {
   #showcase {
-    min-height: 500px;
+    display: none;
+  }
 
-    h1 {
-      font-size: 1vw;
-    }
-    .lead {
-      display: none;
-    }
+  #showcard {
+    display: block;
   }
   #navbarCollapse {
     background-color: whitesmoke;
