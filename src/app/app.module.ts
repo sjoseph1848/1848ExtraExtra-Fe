@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
 import { NewsDataService } from '../app/data/news-data.service';
+import { ElectionDataService } from '../app/data/election-data.service';
 import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     SharedModule
   ],
-  providers: [NewsDataService],
+  providers: [NewsDataService, ElectionDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

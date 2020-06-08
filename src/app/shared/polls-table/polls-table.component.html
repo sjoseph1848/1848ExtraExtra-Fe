@@ -1,30 +1,23 @@
-<div class="table-responsive-sm mt-5">
+<div class="table-responsive-sm mt-5 mb-5">
   <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Democratic Candidate</th>
+        <th scope="col">Republican Candidate</th>
+        <th scope="col">Dem Candidate %</th>
+        <th scope="col">Rep Candidate %</th>
+        <th scope="col">Poll Date</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
+      <tr *ngFor="let poll of polls; let i = index">
+        <th scope="row">{{ i + 1}}</th>
+        <td>{{ poll.demCandidateName }}</td>
+        <td>{{ poll.repCandidateName }}</td>
+        <td>{{ poll.dPct }}</td>
+        <td>{{ poll.rPct }}</td>
+        <td>{{ poll.endDate | date:'shortDate' }}</td>
       </tr>
     </tbody>
   </table>

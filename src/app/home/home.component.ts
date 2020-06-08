@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     let topStory = this.newsDataService.getNewsByCategory('general');
     topStory.subscribe((data: any) => {
-      console.log(data.articles);
       this.mainStoryTitle = data.articles[0].title;
       this.mainStorySubTitle = data.articles[0].description;
       this.mainStoryLink = data.articles[0].url;

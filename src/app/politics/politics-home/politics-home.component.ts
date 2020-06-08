@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsDataService } from '../../data/news-data.service';
+import {ElectionDataService } from '../../data/election-data.service';
 @Component({
   selector: 'app-politics-home',
   templateUrl: './politics-home.component.html',
@@ -13,16 +14,22 @@ export class PoliticsHomeComponent implements OnInit {
   mainStoryLink = 'https://www.cnet.com/personal-finance/how-to-track-your-stimulus-check-now-with-the-irs-get-my-payment-app/';
 
   otherNews = [];
-  constructor(private newsDataService: NewsDataService) { }
+  pollsNational = [];
+  constructor(private newsDataService: NewsDataService,
+              private electionDataService: ElectionDataService) { }
 
   ngOnInit() {
-    let topStory = this.newsDataService.getNewsByCategory('business');
+    const topStory = this.newsDataService.getNewsByCategory('business');
     topStory.subscribe((data: any) => {
-      console.log(data.articles);
       this.mainStoryTitle = data.articles[1].title;
       this.mainStorySubTitle = data.articles[1].description;
       this.mainStoryLink = data.articles[1].url;
       this.otherNews = data.articles;
+    });
+
+    const polls = this.electionDataService.getNationalPolls();
+    polls.subscribe((data: any) => {
+      this.pollsNational = data.slice(0, 10);
     });
 
   }
