@@ -1,0 +1,42 @@
+
+<p *ngIf="!pollsNational"><em>Loading...</em></p>
+
+  <div class="container my-5">
+    <p class="lead text-center">Pres Election Polls</p>
+  <table mat-table [dataSource]="pollsNational" class="mat-elevation-z8"
+    [hidden]="!pollsNational">
+    <!--ID Column-->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let poll">{{ poll.questionId }}</td>
+    </ng-container>
+
+    <!--Trump Column -->
+    <ng-container matColumnDef="Trump">
+      <th mat-header-cell *matHeaderCellDef>Trump</th>
+      <td mat-cell *matCellDef="let poll">{{ poll.rPct }}%</td>
+    </ng-container>
+
+    <!--Biden Column -->
+    <ng-container matColumnDef="Biden">
+      <th mat-header-cell *matHeaderCellDef>Biden</th>
+      <td mat-cell *matCellDef="let poll">{{ poll.dPct }}%</td>
+    </ng-container>
+
+    <!-- End Date-->
+    <ng-container matColumnDef="Date of Poll">
+      <th mat-header-cell *matHeaderCellDef>Date of Poll</th>
+      <td mat-cell *matCellDef="let poll">{{ poll.endDate | date: 'shortDate' }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!--Pagination Directive -->
+  <mat-paginator [hidden]="!pollsNational"
+    [pageSize]="10"
+    [pageSizeOptions]="[10,20,50]"
+    sowFirstLastButtons></mat-paginator>
+</div>
+

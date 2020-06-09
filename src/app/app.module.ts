@@ -10,6 +10,8 @@ import { SharedModule } from './shared/shared.module';
 import { NewsDataService } from '../app/data/news-data.service';
 import { ElectionDataService } from '../app/data/election-data.service';
 import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [NewsDataService, ElectionDataService],
   bootstrap: [AppComponent]
