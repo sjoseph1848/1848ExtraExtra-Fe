@@ -1,1 +1,41 @@
-<p>sports-home works!</p>
+<app-showcase>
+  <header>
+    {{ (mainStoryTitle.length > 70) ? (mainStoryTitle | slice:0:70)+'...':(mainStoryTitle) }}
+  </header>
+    <p class="lead">{{ mainStorySubTitle }}</p>
+    <a [href]="mainStoryLink" target="_blank" class="btn btn-outline-secondary btn-lg text-white">
+      Read More
+   </a>
+  <img src="../../assets/img/sports.png" alt="" class="img-fluid d-none d-lg-block">
+</app-showcase>
+
+
+<app-showcard [story]="otherNews[0]"></app-showcard>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <app-newscard [story]="otherNews[1]"></app-newscard>
+    </div>
+    <div class="col-sm">
+      <app-newscard [story]="otherNews[2]"></app-newscard>
+    </div>
+    <div class="col-sm">
+      <app-newscard [story]="otherNews[3]"></app-newscard>
+     </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <app-newscard [story]="otherNews[4]"></app-newscard>
+    </div>
+    <div class="col-sm">
+      <app-newscard [story]="otherNews[5]"></app-newscard>
+    </div>
+    <div class="col-sm">
+      <app-newscard [story]="otherNews[6]"></app-newscard>
+     </div>
+  </div>
+</div>
