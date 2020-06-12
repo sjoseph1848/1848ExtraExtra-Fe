@@ -9,10 +9,11 @@ import { SharedModule } from '../shared/shared.module';
 import { TableComponent } from './table/table.component';
 import { ElectionCardComponent } from './election-card/election-card.component';
 import { PresidentCardComponent } from './president-card/president-card.component';
+import { PresidentHomeComponent } from './president-home/president-home.component';
 
 
 @NgModule({
-  declarations: [PoliticsHomeComponent, TableComponent, ElectionCardComponent, PresidentCardComponent],
+  declarations: [PoliticsHomeComponent, TableComponent, ElectionCardComponent, PresidentCardComponent, PresidentHomeComponent],
   imports: [
     CommonModule,
     PoliticsRoutingModule,
