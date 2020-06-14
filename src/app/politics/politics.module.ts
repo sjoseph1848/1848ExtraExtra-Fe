@@ -10,16 +10,18 @@ import { TableComponent } from './table/table.component';
 import { ElectionCardComponent } from './election-card/election-card.component';
 import { PresidentCardComponent } from './president-card/president-card.component';
 import { PresidentHomeComponent } from './president-home/president-home.component';
-
+import { RouterModule } from '@angular/router';
+import { routes } from './politics-routing.module';
 
 @NgModule({
   declarations: [PoliticsHomeComponent, TableComponent, ElectionCardComponent, PresidentCardComponent, PresidentHomeComponent],
   imports: [
     CommonModule,
-    PoliticsRoutingModule,
     SharedModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    PoliticsRoutingModule,
+    RouterModule.forChild(routes)
   ]
 })
 export class PoliticsModule { }
