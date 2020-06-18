@@ -1,10 +1,10 @@
 
-<p *ngIf="!pollsNational"><em>Loading...</em></p>
+<p *ngIf="!pollDataSource"><em>Loading...</em></p>
 
   <div class="container my-5">
     <p class="lead text-center">Pres Election Polls</p>
-  <table mat-table [dataSource]="pollsNational" class="mat-elevation-z8"
-    [hidden]="!pollsNational">
+  <table mat-table [dataSource]="pollDataSource" class="mat-elevation-z8"
+    [hidden]="!pollDataSource">
     <!--ID Column-->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -34,9 +34,9 @@
   </table>
 
   <!--Pagination Directive -->
-  <mat-paginator [hidden]="!pollsNational"
+  <mat-paginator #pollPaginator
     [pageSize]="10"
     [pageSizeOptions]="[10,20,50]"
-    sowFirstLastButtons></mat-paginator>
+    showFirstLastButtons></mat-paginator>
 </div>
 

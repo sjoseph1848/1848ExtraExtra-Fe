@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatPaginator} from '@angular/material/paginator';
+import {Component, OnInit, OnDestroy, AfterViewInit, ViewChild} from '@angular/core';
+import {MatPaginator, MatTableDataSource } from '@angular/material';
 import {ElectionDataService } from '../../data/election-data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-table',
@@ -10,17 +10,32 @@ import {ElectionDataService } from '../../data/election-data.service';
 })
 export class TableComponent implements OnInit {
 
-  public displayedColumns: string[] = ['id', 'Trump', 'Biden', 'Date of Poll'];
-  pollsNational: NationalPoll[] = [];
+  displayedColumns: string[] = ['id', 'Trump', 'Biden', 'Date of Poll'];
+  pollDataSource: MatTableDataSource<NationalPoll> = new MatTableDataSource();
+
+  pollsSubscription: Subscription;
+
+  @ViewChild('pollPaginator', {static: false}) pollPaginator: MatPaginator;
+
 
   constructor(private electionDataService: ElectionDataService) { }
 
   ngOnInit() {
-    const polls = this.electionDataService.getNationalPolls();
-    polls.subscribe((data: any) => {
-      this.pollsNational = data.slice(0, 10);
-    });
+    this.pollsSubscription = this.electionDataService.getNationalPolls()
+      .subscribe(polls => this.pollDataSource.data = polls);
+    // const polls = this.electionDataService.getNationalPolls();
+    // polls.subscribe((data: any) => {
+    //   this.pollsNational = data.slice(0, 10);
+    // });
 
+  }
+
+  ngAfterViewInit(): void {
+    this.pollDataSource.paginator = this.pollPaginator;
+  }
+
+  ngOnDestroy(): void {
+    this.pollsSubscription.unsubscribe();
   }
 
 }
