@@ -18,7 +18,7 @@ export class CovidDashComponent implements OnInit {
 
   casesPercentage;
   hospitalizationPercentage;
-  DeathPercentage;
+  deathPercentage;
 
   constructor(private covid: CovidDataService) { }
 
@@ -28,7 +28,7 @@ export class CovidDashComponent implements OnInit {
       this.newHosp = data[data.length - 1].hospitalizations;
       this.yesterdayHosp = data[data.length - 2].hospitalizations;
       this.hospitalizationPercentage = this.getPercentageChange(this.newHosp, this.yesterdayHosp);
-      console.log(this.hospitalizationPercentage);
+
     });
 
     const cases = this.covid.getCovidCases(this.county);
@@ -36,14 +36,15 @@ export class CovidDashComponent implements OnInit {
       this.totalCases = data[data.length - 1].cases;
       this.yesterdayCases = data[data.length - 2].cases;
       this.casesPercentage = this.getPercentageChange(this.totalCases, this.yesterdayCases);
-      console.log(this.totalCases);
+
     });
 
     const deaths = this.covid.getCovidDeaths(this.county);
     deaths.subscribe((data: any) => {
-      this.totalDeaths = data[data.lenth - 1];
-      console.log(this.totalDeaths)
-    })
+      this.totalDeaths = data[data.length - 1].deaths;
+      this.yesterdayDeaths = data[data.length - 2].deaths;
+      this.deathPercentage = this.getPercentageChange(this.totalDeaths, this.yesterdayDeaths);
+    });
   }
 
   getPercentageChange(today: number, yesterday: number ) {

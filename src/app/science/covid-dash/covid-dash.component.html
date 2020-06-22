@@ -13,8 +13,8 @@
 
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title">Total Cases</h5>
-            <p class="card-text">{{ totalCases | number:'1.0':'en-US'}}</p>
+            <h5 class="card-title text-center">Total Cases</h5>
+            <p class="card-text text-center">{{ totalCases | number:'1.0':'en-US'}}</p>
           </div>
         </div>
       </div>
@@ -22,8 +22,8 @@
       <div class="col-md-4  my-5 col-sm">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title">Hospitalizations Today</h5>
-            <p class="card-text">{{ newHosp | number:'1.0':'en-US'  }}</p>
+            <h5 class="card-title text-center">Hospitalizations Today</h5>
+            <p class="card-text text-center">{{ newHosp | number:'1.0':'en-US'  }}</p>
           </div>
         </div>
       </div>
@@ -31,8 +31,8 @@
       <div class="col-md-4 my-5 col-sm">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title">Deaths Today</h5>
-            <p class="card-text">{{ totalDeaths  }}</p>
+            <h5 class="card-title text-center">Total Deaths</h5>
+            <p class="card-text text-center">{{ totalDeaths  }}</p>
           </div>
         </div>
       </div>
@@ -44,8 +44,8 @@
 
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title">Deaths % Change from Yesterday</h5>
-            <p class="card-text">Coming Soon...</p>
+            <h5 class="card-title text-center">Case % Change from Yesterday</h5>
+            <p class="card-text text-center">{{ casesPercentage | number }}%</p>
           </div>
         </div>
 
@@ -55,8 +55,8 @@
 
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title">Case % Change From Yesterday</h5>
-            <p class="card-text">Coming Soon...</p>
+            <h5 class="card-title text-center">Hospitalization % Change From Yesterday</h5>
+            <p class="card-text text-center">{{ hospitalizationPercentage | number }}%</p>
           </div>
         </div>
 
@@ -67,8 +67,8 @@
 
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title">Deaths % Change From Yesterday</h5>
-            <p class="card-text">Coming Soon...</p>
+            <h5 class="card-title text-center">Deaths % Change From Yesterday</h5>
+            <p class="card-text text-center">{{ deathPercentage | number }}%</p>
           </div>
         </div>
 
@@ -82,5 +82,16 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-sm my-5">
+        <app-covid-deaths-dash></app-covid-deaths-dash>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm my-5">
+
+      </div>
+    </div>
 
   </div>
