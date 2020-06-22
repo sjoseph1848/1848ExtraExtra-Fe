@@ -13,6 +13,16 @@ export class CovidDataService {
     return this.http.get(url);
   }
 
+  getCovidDeaths(county: string) {
+    let url = `https://1848extra.azurewebsites.net/api/CovidDeaths/deaths/${county}`;
+    return this.http.get(url);
+  }
+
+  getCovidCases(county: string) {
+    let url = `https://1848extra.azurewebsites.net/api/CovidCases/cases/${county}`;
+    return this.http.get(url);
+  }
+
 
 
 }

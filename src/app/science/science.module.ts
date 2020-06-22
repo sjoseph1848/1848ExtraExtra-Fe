@@ -8,9 +8,10 @@ import { CovidDashComponent } from './covid-dash/covid-dash.component';
 import { CovidCardComponent } from './covid-card/covid-card.component';
 import { RouterModule } from '@angular/router';
 import { CovidHospitalizationsDashComponent } from './covid-hospitalizations-dash/covid-hospitalizations-dash.component';
+import { CovidDashCardComponent } from './covid-dash-card/covid-dash-card.component';
 
 @NgModule({
-  declarations: [ScienceHomeComponent, CovidDashComponent, CovidCardComponent, CovidHospitalizationsDashComponent],
+  declarations: [ScienceHomeComponent, CovidDashComponent, CovidCardComponent, CovidHospitalizationsDashComponent, CovidDashCardComponent],
   imports: [
     CommonModule,
     ScienceRoutingModule,

@@ -47,7 +47,6 @@ export class CovidHospitalizationsDashComponent implements OnInit {
     const dallas = this.covid.getDallasCovidHospitalizations('Dallas');
     dallas.subscribe((data: any) => {
       const test = data.map(dat => dat.date);
-      console.log(test);
       this.options.xAxis.categories = data.map(dat => dat.date);
       this.options.series[0]['data'] = data.map(dat => dat.hospitalizations);
       Highcharts.chart('container', this.options);
